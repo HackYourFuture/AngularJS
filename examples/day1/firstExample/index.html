@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>First Angular App</title>
+    <style>
+        .remarked {
+            background-color: black;
+            color: white;
+        }
+
+        .bg_pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        {{ message }}</br>
+        {{ answer }}</br>
+        <input type="text" ng-model="answer" /></br>
+    </div>
+    <div ng-controller="quoteController">
+        <span ng-class="{remarked: quote.remarked}"><q>{{ quote.quote }}</q> {{ quote.author }}</span></br>
+    </div>
+    <div ng-controller="animalsController">
+        <ul ng-repeat="animal in animals">
+            <li ng-class="{bg_pink: animal.specie == 'pig'}">
+                {{ animal.name }} / {{ animal.specie }}
+                <input type="text" placeholder="rename..." ng-model="newName" /></br>
+                <button ng-click="rename($index, newName)">rename></buton>
+                <button ng-click="cuddle($index)">cuddle</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="js/controllers/animalsController.js"></script>
+    <script src="js/controllers/quoteController.js"></script>
+    <script src="js/controllers/myController.js"></script>
+    <script src="js/modules/firstExample.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
