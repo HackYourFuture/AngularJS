@@ -1,0 +1,20 @@
+.container {
+  padding: 0vh 8vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  width: 20vw;
+  height: 20vw;
+  border: solid 1px #f5f5f5;
+  background-color: #f2f2f2;
+}
+.card-info {
+  height: 5vw;
+}
+.card img{
+  padding: 0vh 2.5vw;
+  width: 15vw;
+  height: 15vw;
+}
