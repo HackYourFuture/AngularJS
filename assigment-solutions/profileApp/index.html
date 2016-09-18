@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>First Angular App</title>
+    <style>
+        .favorited {
+            color: green;
+        }
+    </style>
+</head>
+
+<body ng-app="profileApp">
+    <div ng-controller="profileController">
+        <div ng-show="editing">
+            <label>Name:</label></br>{{ name }}
+            <input type="text" ng-model="name" /></br>
+            <label>Surname:</label></br>
+            <input type="text" ng-model="surname" /></br>
+            <label>Description: </label></br>
+            <textarea ng-model="aboutme"></textarea></br>
+            <label>Hobbies: </label></br>
+            <input type="text" ng-model="newHobbie" />
+            <button ng-click="addHobbie(newHobbie)">Add</button>
+            <div ng-repeat="hobbie in hobbies">
+                <!-- Span below is going to be class="favorited" if hobbie.favorite is equal true -->
+                <span ng-class="{favorited: hobbie.favorite}">{{ hobbie.name }}</span>
+                <button ng-click="toggleFavorite($index)" ng-hide="hobbie.favorite">favorite</button>
+                <button ng-click="toggleFavorite($index)" ng-show="hobbie.favorite">unfavorite</button>
+                <button ng-click="deleteHobbie($index)">delete</button>
+            </div>
+            </br>
+            <button ng-click="editing = !editing">save</button>
+        </div>
+        <div ng-hide="editing">
+            <p> {{ name }} {{ surname }} </p>
+            <p> {{ aboutme }} </p>
+            <div ng-repeat="hobbie in hobbies">
+                <span ng-class="{favorited: hobbie.favorite}">{{ hobbie.name }}</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="js/controllers/profileController.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
