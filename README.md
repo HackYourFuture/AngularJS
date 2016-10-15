@@ -6,11 +6,25 @@
 
 ## Day 2: Services & Directives
 
+Run a temporal server with <a href="http://brackets.io/">brackets</a> or installing <a href="https://www.python.org/downloads/">python(2.x.x)</a> and typunc in the command promp ```python -m SimpleHTTPServer```
+
 * <a href="https://docs.angularjs.org/guide/services">https://docs.angularjs.org/guide/services</a>
 
 * <a href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a>
 
 ## Day 3: Filters & Routes
+
+``` HTML
+// Replace X.Y.Z with the value of the angular version that you are using
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js" />
+```
+
+``` javascript
+// app.js
+
+angular.module("myApp", ["ngRoute"])
+```
 
 * <a href="https://docs.angularjs.org/api/ng/filter/filter">https://docs.angularjs.org/api/ng/filter/filter</a>
 
