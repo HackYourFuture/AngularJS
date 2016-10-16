@@ -1,5 +1,7 @@
 # AngularJS
 
+## <a href="https://github.com/HackYourFuture/AngularJS/tree/master/slides">Slides</a>
+
 ## Day 1: Controllers
 
 * <a href="https://docs.angularjs.org/guide/controller">https://docs.angularjs.org/guide/controller</a>

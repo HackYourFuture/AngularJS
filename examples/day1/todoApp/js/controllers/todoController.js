@@ -1,11 +1,12 @@
-function todoController($scope) {
-	$scope.myInput = "";
-    $scope.toDoList = [];
+function todoController ($scope) {
+	$scope.todos = []
 
-    $scope.addItem = function() {
-    	if($scope.myInput) {
-    		$scope.toDoList.push($scope.myInput);
-    		$scope.myInput = "";
-    	}
-    }
+	$scope.addTodo = function (newTodo) {
+		if ($scope.todos.indexOf(newTodo) == -1) {
+			$scope.todos.push({
+				name: newTodo,
+				done: false,
+			})
+		}
+	}
 }
