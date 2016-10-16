@@ -4,6 +4,27 @@
 
 ## Day 1: Controllers
 
+Hello World
+
+``` HTML
+<body>
+<div ng-app="firstApp">
+	<div ng-controller="firstController">
+		{{ message }}	
+	</div>
+</div>
+</body>
+```
+
+``` javascript
+angular.module('firstApp', [])
+.controller('firstController', ['$scope', firstController])
+
+function firstController($scope) {
+	$scope.message = 'Hello World'
+}
+```
+
 * <a href="https://docs.angularjs.org/guide/controller">https://docs.angularjs.org/guide/controller</a>
 
 ## Day 2: Services & Directives
