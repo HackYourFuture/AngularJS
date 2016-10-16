@@ -25,7 +25,11 @@ function firstController($scope) {
 }
 ```
 
-* <a href="https://docs.angularjs.org/guide/controller">https://docs.angularjs.org/guide/controller</a>
+Documentation / Tutorials
+
+* <a href="http://www.w3schools.com/angular/angular_intro.asp">W3Schools Intro</a>
+* <a href="https://docs.angularjs.org/api/ng">ng api </a>
+* <a href="https://docs.angularjs.org/guide/controller">controller guide</a>
 
 ## Day 2: Services & Directives
 
