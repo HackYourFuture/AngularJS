@@ -1,4 +1,4 @@
-angular.module('weatherApp', [])
+angular.module('mainApp', [])
 .controller('weatherController', ['$scope', 'weather', weatherController])
 .service('weather', weather)
-.directive('weatherCard', weatherCard);
+.directive('weatherCard', weatherCard)
