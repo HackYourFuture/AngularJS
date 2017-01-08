@@ -9,8 +9,8 @@ Hello World
 ``` HTML
 <body>
 <div ng-app="firstApp">
-	<div ng-controller="firstController">
-		{{ message }}	
+	<div ng-controller="firstController as ctrl">
+		{{ ctrl.message }}	
 	</div>
 </div>
 </body>
@@ -18,10 +18,11 @@ Hello World
 
 ``` javascript
 angular.module('firstApp', [])
-.controller('firstController', ['$scope', firstController])
+.controller('firstController', [firstController])
 
 function firstController($scope) {
-	$scope.message = 'Hello World'
+	var vm = this
+	vm.message = 'Hello World'
 }
 ```
 

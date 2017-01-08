@@ -15,29 +15,8 @@
                         <li>Course overview</li>
                         <li>A bit of history</li>
                         <li>Angular core concepts</li>
-                        <li>Funny stuff</li>
+                        <li>Controllers, directives</li>
                     </ul>
-                </section>
-                <section>
-                    <section>
-                        <h2>Course overview</h2>
-                    </section>
-                    <section>
-                        <h3>Objectives</h3>
-                        <ul>
-                            <li>Understand core concepts of angular and MVC pattern</li>
-                            <li>Understand the advantages of using angular</li>
-                            <li>Being able to create a full web application</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Structure</h3>
-                        <ul>
-                            <li>Day1: controllers</li>
-                            <li>Day2: directives &amp; services</li>
-                            <li>Day3: filters &amp; single page application</li>
-                        </ul>
-                    </section>
                 </section>
                 <section>
                     <section>
@@ -51,7 +30,7 @@
                             <li>First MVC framework beside Knockout.js &amp; Backbone.js</li>
                             <li>Ionic brought Angular to mobile</li>
                             <li>Angular 1 vs Angular 2</li>
-                            <li>Enemies: Emberjs, Reactjs</li>
+                            <li>Enemies: React, Vue, Ember</li>
                         </ul>
                     </section>
                 </section>
@@ -66,29 +45,30 @@
                     <section>
                         <h2>Angular approach</h2>
                         <ul>
-                            <li>M - Services(remote), controller(local)</li>
+                            <li>M - Services(remote, local), controllers(local)</li>
                             <li>V - HTML, directives (ng-attributes)</li>
                             <li>C - Controllers</li>
                         </ul>
                     </section>
                 </section>
                 <section>
-                    <code><span style="color: Orchid">keepAttention</span> = <span style="color: orange">true</span></code>
-                </section>
-                <section>
-                    <section>
-                        <h1>The fun starts</h1>
-                        <img src="img/cats-dancing.jpg"/>
-                    </section>
                     <section>
                         <h2>View</h2>
                         <ul>
                             <li>Data binding: {{ someData }}</li>
-                            <li>ng attributes: ng-app, ng-controller, ng-repeat, ng-click, ng-show/ng-hide, ng-class, ng-change...</li>
+                            <li>Directives: ng-app, ng-controller, ng-repeat, ng-click, ng-show/ng-hide, ng-class, ng-change...</li>
                         </ul>
                     </section>
                     <section>
-                        <img style="width: 70vw;" src="img/ang-view.png">
+                        <pre>
+                        <code data-trim data-noescape>
+                        <body ng-app="myApp">
+                            <div ng-controller="myController as ctrl">
+                                {{ ctrl.message }}
+                            </div>
+                        </body>
+                        </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>Controller</h2>
@@ -98,38 +78,45 @@
                         </ul>
                     </section>
                     <section>
-                        <img style="width: 70vw;" src="img/ang-controller.png">
+                        <pre>
+                        <code>
+function myController() {
+    vm = this
+    vm.message = 'Hello world'
+}
+                        </code>
+                        </pre>
                     </section>
                     <section>
                         <h2>But something is missing?!</h2>
-                        <p>We need to define the Angular app</p>
-                        <img src="img/ang-app.png">
-                    </section>
-                    <section>
-                        <img src="img/ng-all.png">
+                        <p>We need to define a module</p>
+                        <pre>
+                        <code>
+angular.module('myApp', []).controller('myController', [myController]);
+                        </code>
+                        </pre>
                     </section>
                 </section>
                 <section>
-                    <code><span style="color: Orchid">keepAttention</span> = <span style="color: orange">meh</span></code>
-                </section>
-                <section>
-                    <section>
-                        <h2>Not for today, but...</h2>
-                        <img src="img/smiley-monkey.jpg"/>    
-                    </section>
                     <section>
                         <h2>Services</h2>
                         <ul>
-                            <li>The remote model</li>
+                            <li>The model</li>
                             <li>$http: get data online</li>
                         </ul>
                     </section>
                     <section>
-                        <img style="width: 70vw;" src="img/ang-service.png">
+                        <pre>
+                        <code>
+angular.module('myApp', []).service('myService', function($http) {
+    $http.getAll = function() {
+        var api = 'someUrl.com'
+        return $http.get(api + '/alldata')
+    }
+})
+                        </code>
+                        </pre>
                     </section>
-                </section>
-                <section>
-                    <code>git clone https://github.com/isalga/ng-HackYourFuture.git</code>
                 </section>
             </div>
         </div>

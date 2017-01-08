@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Angular App</title>
+	<style type="text/css">
+		.visited {
+			background-color: green;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="firstController as ctrl">
+		<br/>
+		1.
+		<br/>
+		{{ ctrl.hello }} World
+		<br/>
+		2.
+		<br/>
+		{{ ctrl.hello }} {{ ctrl.name }}
+		<input type="text" ng-model="ctrl.name"/>
+		<br/>
+		3.
+		<br/>
+		<ul>
+			<li ng-repeat="city in ctrl.cities">
+				<span>{{ city.name }}</span>
+			</li>
+		</ul>
+		<br/>
+		4.
+		<br/>
+		<input type="text" ng-model="ctrl.newCity"/>
+		<button ng-click="ctrl.addCity()">addCity</button>
+		<br/>
+		<ul>
+			<li ng-repeat="city in ctrl.cities">
+				<span>{{ city.name }}</span>
+			</li>
+		</ul>
+		<br/>
+		5.
+		<br/>
+		<input type="text" ng-model="ctrl.newCity"/>
+		<button ng-click="ctrl.addCity()">addCity</button>
+		<br/>
+		FirsController
+		<br/>
+		<ul>
+			<li ng-repeat="city in ctrl.cities">
+				<span ng-class="{visited: city.visited}">{{ city.name }}</span>
+				<button
+				ng-show="!city.visited"
+				ng-click="city.visited = true">
+				visit</button>
+				<button
+				ng-hide="!city.visited"
+				ng-click="city.visited = false">
+				unvisit</button>
+			</li>
+		</ul>
+	</div>
+
+	<br/>
+	<br/>
+	<br/>
+	Extra
+	<br/>
+	If we separate model(service) from controllers we can share data between controllers
+	<br>
+	<div ng-controller="secondController as second">
+		<ul>
+			<li ng-repeat="city in second.cities">
+				<span ng-class="{visited: city.visited}">{{ city.name }}</span>
+			</li>
+		</ul>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="js/services/data.js"></script>
+	<script src="js/controllers/secondController.js"></script>
+	<script src="js/controllers/firstController.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
