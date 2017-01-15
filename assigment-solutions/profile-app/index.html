@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile App</title>
+	<style>
+		.favourite {
+			background-color: green;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="js/services/profile.js"></script>
+	<script src="js/controllers/profileEditorController.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+<div ng-app='profileApp'>
+	<div ng-controller='profileEditorController as editor'>
+		<div ng-show='editor.editing'>
+			<input type="text" ng-model="editor.profile.name" placeholder="name" /></br>
+			<input type="text" ng-model="editor.profile.surname" placeholder="surname" /></br>
+			<input type="text" ng-model="editor.hobbyNameInput" placeholder="hobby" />
+			<button ng-click='editor.addHobby()'>Add</button></br>
+			<ul>
+				<li ng-repeat='hobby in editor.profile.hobbies track by $index'>
+					<span ng-class="{favourite: hobby.favourite}">{{ hobby.name }}</span>
+					<input type="checkbox" ng-model='hobby.favourite'/>
+					<button ng-click='editor.removeHobby($index)'>Delete</button>
+				</li>
+			</ul></br>
+			<button ng-click='editor.editing = false'>Save</button>
+		</div>
+		<div ng-hide='editor.editing'>
+			{{ editor.profile.name }} {{ editor.profile.surname }}</br>
+			<ul>
+				<li ng-repeat='hobby in editor.profile.hobbies track by $index'>
+					<span ng-class="{favourite: hobby.favourite}">{{ hobby.name }}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

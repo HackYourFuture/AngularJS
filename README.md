@@ -20,7 +20,7 @@ Hello World
 angular.module('firstApp', [])
 .controller('firstController', [firstController])
 
-function firstController($scope) {
+function firstController() {
 	var vm = this
 	vm.message = 'Hello World'
 }

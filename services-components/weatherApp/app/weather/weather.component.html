@@ -1,0 +1,15 @@
+<div class="container jumbotron">
+<form>
+  <div class="form-group">
+  	<input type="text" ng-model="ctrl.cityInput" class="form-control" /></br>
+  </div>
+  <button class="btn btn-primary" ng-click="ctrl.getWeather()">get weather</button></br>
+</form>
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">{{ ctrl.name }}</h4>
+    <h6 class="card-subtitle mb-2 text-muted">{{ ctrl.temperature }} {{ ctrl.main }}</h6>
+    <p class="card-text">{{ ctrl.description }}</p>
+  </div>
+</div>
+</div>
