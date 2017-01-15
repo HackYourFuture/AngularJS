@@ -3,7 +3,7 @@ function profile() {
 
 	vm.name = ''
 	vm.surname = ''
-	vm.hobbies = [{ name: 'aaa', favourite: false }]
+	vm.hobbies = []
 
 	vm.addHobby =  function(name) {
 		var hobby = { name: name, favourite: false }
