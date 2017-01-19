@@ -1,4 +1,4 @@
-angular.module('app.helloWorld')
+angular.module('app.hello')
 .service('helloWorldService', helloWorldService)
 
 function helloWorldService($http, api) {

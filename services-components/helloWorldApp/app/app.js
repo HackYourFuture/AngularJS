@@ -1,1 +1,1 @@
-angular.module('app',['app.helloWorld'])
+angular.module('app',['app.hello'])
