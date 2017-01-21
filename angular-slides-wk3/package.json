@@ -1,0 +1,15 @@
+{
+    "name": "angular-slides-wk3",
+    "version": "1.0.0",
+    "description": "Angular Week 3 slides",
+    "main": "index.js",
+    "scripts": {
+        "prestart": "npm install",
+        "start": "http-server -c-1 -p 8000"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "http-server": "^0.9.0"
+    }
+}
