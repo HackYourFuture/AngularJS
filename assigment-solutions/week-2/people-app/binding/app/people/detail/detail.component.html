@@ -1,0 +1,8 @@
+<div ng-if="$ctrl.person.name" class="card">
+    <img class="card-img-top m-4" ng-src="{{$ctrl.person.pictureUrl}}" height="135" width="135">
+    <div class="card-block ">
+        <h4 class="card-title ">{{ $ctrl.person.name }}</h4>
+        <p class="card-text">{{ $ctrl.person.role }}</p>
+        <a ng-href="{{$ctrl.person.linkedInUrl}}" class="card-link">LinkedIn</a>
+    </div>
+</div>

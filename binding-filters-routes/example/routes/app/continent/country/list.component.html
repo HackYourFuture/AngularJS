@@ -1,0 +1,7 @@
+<input type="text" ng-model="search">
+<ul>
+	<li ng-repeat="country in $ctrl.countries | filter:search ">
+		<!-- <a ng-href="#!/country/detail/{{$index}}">{{country.name}}</a> -->
+		<a ui-sref="country({index: $index})">{{country.name}}</a>
+	</li>
+</ul>

@@ -1,0 +1,6 @@
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-start" ng-repeat='person in $ctrl.people track by $index'>
+        {{ person.name }}
+        <button class="btn btn-link ml-auto" ng-click="$ctrl.onClick({person: person})">see</button>
+    </li>
+</ul>

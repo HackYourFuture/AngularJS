@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contries App</title>
+    <base href="/">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js'></script>
+    <script src="//unpkg.com/angular-ui-router@1.0.0-beta.1/release/angular-ui-router.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/continent/continent.module.js"></script>
+    <script src="app/continent/continent.controller.js"></script>
+    <script src="app/continent/continent.component.js"></script>
+    <script src="app/continent/country/list.component.js"></script>
+    <script src="app/continent/country/detail.component.js"></script>
+</head>
+
+<body ng-app='app'>
+    <ui-view></ui-view>
+</body>
+
+</html>

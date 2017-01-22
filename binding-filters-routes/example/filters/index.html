@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap ( Yeti theme ) -->
+    <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css">
+
+    <!-- AngularJS -->
+    <script src="js/lib/angular-1.5.7.min.js"></script>
+    <!-- Angular extended filters -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.9/angular-filter.min.js"></script>
+
+    <!-- App -->
+    <script src="js/controllers/countriesController.js"></script>
+    <script src="js/controllers/dateController.js"></script>
+    <script src="js/services/country.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="countriesApp">
+    <div class="container">
+        <div ng-controller="dateController" class="panel panel-default">
+            <div class="panel-body">
+                <label>Currency:</label>
+                <select class="form-control" ng-model="cur">
+                    <option value="€">€</option>
+                    <option value="nakfa">nakfa</option>
+                    <option value="£S">£S</option>
+                </select>
+                {{ 2312434354 | currency : cur }}
+                <p>{{ today | date : "MM.d.y" }}</p>
+            </div>
+        </div>
+        <div ng-controller="countriesController" class="panel panel-default">
+            <div class="panel-body">
+                <input type="text" placeholder="search..." class="form-control" ng-model="search" />
+                <label>Order by:</label>
+                <select class="form-control" ng-model="order">
+                    <option value="name">Alphabetical</option>
+                    <option value="-population">Population</option>
+                    <option value="subregion">Region</option>
+                </select>
+                <label>Limit to:</label>
+                <select class="form-control" ng-model="limit">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="false">all</option>
+                </select>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <th>Name</th>
+                            <th>Capital</th>
+                            <th>Region(subcontinent)</th>
+                            <th>Population</th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="country in countries | filter:search | orderBy:order | limitTo:limit">
+                                <td> {{ country.name }} </td>
+                                <td> {{ country.capital }} </td>
+                                <td> {{ country.subregion }} </td>
+                                <td> {{ country.population }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
