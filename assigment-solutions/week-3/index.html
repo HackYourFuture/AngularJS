@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js'></script>
+    <script src="//unpkg.com/angular-ui-router@1.0.0-beta.1/release/angular-ui-router.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/navbar/navbar.module.js"></script>
+    <script src="app/navbar/navbar.component.js"></script>
+    <script src="app/user/user.module.js"></script>
+    <script src="app/user/user.service.js"></script>
+    <script src="app/user/user.controller.js"></script>
+    <script src="app/user/list/list.component.js"></script>
+    <script src="app/user/detail/detail.component.js"></script>
+    <script src="app/user/profile-creator/profile.component.js"></script>
+    <script src="app/user/profile-creator/form/form.component.js"></script>
+    <script src="app/user/profile-creator/output/output.component.js"></script>
+</head>
+
+<body ng-app="app" class>
+    <nav-bar></nav-bar>
+    <div class="container" style="padding-top: 4%">
+        <ui-view></ui-view>        
+    </div>
+</body>
+
+</html>
